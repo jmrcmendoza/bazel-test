@@ -1,0 +1,10 @@
+{
+  "./**/*.ts": [
+    "npm run lint:fix",
+    "prettier --write"
+  ],
+  "./**/*.spec.ts": [
+    "npm run lint:fix",
+    "prettier --write"
+  ]
+}

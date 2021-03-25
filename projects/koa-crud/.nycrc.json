@@ -1,0 +1,10 @@
+{
+  "all": true,
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/controllers/promo-enrollment-requests/*.ts",
+    "**/*.spec.ts"
+  ]
+}

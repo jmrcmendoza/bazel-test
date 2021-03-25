@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "lib": ["esnext", "es2016.array.include", "esnext.asynciterable"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "outDir": "./build",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@routes/*": ["src/routes/*"],
+      "@models/*": ["src/models/*"],
+      "@useCases/*": ["src/use-cases/*"],
+      "@entities/*": ["src/entities/*"],
+      "@dataAccess/*": ["src/data-access/*"],
+      "@encryption": ["src/encryption"],
+      "@controllers/*": ["src/controllers/*"],
+      "@serialize": ["src/serialize"],
+      "@helpers/*": ["src/helpers/*"],
+      "@middlewares/*": ["src/middleware/*"],
+      "@server": ["src/index.ts"]
+    }
+  }
+}
