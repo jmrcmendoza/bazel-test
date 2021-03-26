@@ -1,9 +1,0 @@
-{
-  "colors": true,
-  "exit": true,
-  "recursive": true,
-  "bail": true,
-  "require": ["ts-node/register/transpile-only", "tsconfig-paths/register"],
-  "spec": "./test/**/*.spec.ts",
-  "check-leaks": true
-}
