@@ -17,11 +17,11 @@ export default async function getChannelMessagesController(
 
   const messages = await MessageModel.getMessages(
     { channel: channel.id },
-    first as any,
-    after as any,
+    first,
+    after,
   );
 
-  const result = paginate(first as any, messages);
+  const result = paginate(first, messages);
 
   return {
     status: 200,

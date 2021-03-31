@@ -45,13 +45,9 @@ export default async function getDirectMessagesController(
     R.sortBy(R.identity)([person.id, recipient]),
   ) as any;
 
-  const messages = await MessageModel.getMessages(
-    { channel },
-    first as any,
-    after as any,
-  );
+  const messages = await MessageModel.getMessages({ channel }, first, after);
 
-  const result = paginate(first as any, messages);
+  const result = paginate(first, messages);
 
   return {
     status: 200,

@@ -4,5 +4,6 @@
   "inline-diffs": true,
   "recursive": true,
   "require": ["ts-node/register/transpile-only", "tsconfig-paths/register"],
+  "spec": "projects/hovchat/test/**/*.spec.ts",
   "timeout": 10000
 }

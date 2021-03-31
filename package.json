@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/jmrcmendoza/bazel-test#readme",
   "dependencies": {
+    "@bazel/bazelisk": "^1.7.5",
+    "@bazel/buildifier": "^4.0.1",
     "@bazel/typescript": "^3.1.0",
     "@highoutput/logger": "~0.4.0",
     "@koa/multer": "^3.0.0",

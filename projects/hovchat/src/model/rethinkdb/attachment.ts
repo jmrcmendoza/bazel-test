@@ -48,7 +48,7 @@ class AttachmentModel
   async getAttachments(
     filter: { channel: string; integration: string },
     first = '1000',
-    after: string | undefined | null,
+    after: string,
     cursorField = 'cursorDateTimeCreated',
   ) {
     const query = this.table

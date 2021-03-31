@@ -100,7 +100,7 @@ ts_project(
 load("@npm//mocha:index.bzl", "mocha_test")
 
 mocha_test(
-    name = "test",
+    name = "tests",
     args = [
         "--config=projects/hovchat/.mocharc.json",
         "--files=true",
@@ -112,14 +112,61 @@ mocha_test(
         "tsconfig.json",
         ".mocharc.json",
     ]) + PRODUCTION_DEPENDENCIES + [
-        "@npm//ts-node",
+        "//:tsconfig.json",
+        "@npm//@types/ajv",
+        "@npm//@types/aws-sdk",
+        "@npm//@types/big.js",
+        "@npm//@types/bluebird",
+        "@npm//@types/chai",
+        "@npm//@types/chai-as-promised",
+        "@npm//@types/chance",
+        "@npm//@types/deep-equal",
+        "@npm//@types/graphql",
+        "@npm//@types/graphql-iso-date",
+        "@npm//@types/graphql-type-json",
+        "@npm//@types/koa",
+        "@npm//@types/koa-bodyparser",
+        "@npm//@types/koa-router",
+        "@npm//@types/koa-static",
+        "@npm//@types/koa__multer",
+        "@npm//@types/lru-cache",
         "@npm//@types/mocha",
+        "@npm//@types/ms",
+        "@npm//@types/node",
+        "@npm//@types/node-fetch",
+        "@npm//@types/qrcode",
+        "@npm//@types/ramda",
+        "@npm//@types/rethinkdb",
+        "@npm//@types/serialize-error",
+        "@npm//@types/sinon",
+        "@npm//@types/supertest",
+        "@npm//@types/uuid",
+        "@npm//@types/ws",
+        "@npm//@typescript-eslint/eslint-plugin",
+        "@npm//@typescript-eslint/parser",
         "@npm//chai",
         "@npm//chai-as-promised",
-        "@npm//sinon",
         "@npm//chance",
+        "@npm//cross-env",
+        "@npm//eslint",
+        "@npm//eslint-config-airbnb-base",
+        "@npm//eslint-config-airbnb-typescript",
+        "@npm//eslint-config-prettier",
+        "@npm//eslint-import-resolver-typescript",
+        "@npm//eslint-plugin-import",
+        "@npm//eslint-plugin-prettier",
+        "@npm//husky",
+        "@npm//nyc",
+        "@npm//p-wait-for",
+        "@npm//prettier",
+        "@npm//sinon",
         "@npm//socket.io-client",
+        "@npm//subscriptions-transport-ws",
         "@npm//supertest",
+        "@npm//ts-node",
+        "@npm//tsconfig-paths",
+        "@npm//tscpaths",
+        "@npm//typescript",
     ],
 )
 
@@ -128,24 +175,4 @@ filegroup(
     srcs = glob([
         "schema/**/*",
     ]),
-)
-
-load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
-
-nodejs_image(
-    name = "docker_image",
-    base = "@nodejs_base_image//image",
-    data = [
-        ":compile",
-        ":extra",
-    ] + PRODUCTION_DEPENDENCIES,
-    entry_point = ":index.ts",
-)
-
-load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
-
-nodejs_binary(
-    name = "start",
-    data = [":compile", ":extra"],
-    entry_point = ":index.ts",
 )

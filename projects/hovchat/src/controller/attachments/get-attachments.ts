@@ -28,11 +28,11 @@ export default async function getAttachmentsController(
 
   const attachments = await AttachmentModel.getAttachments(
     { channel, integration: integration.key },
-    first as any,
-    after as any,
+    first,
+    after,
   );
 
-  const result = paginate(first as any, attachments);
+  const result = paginate(first, attachments);
 
   return {
     status: 200,

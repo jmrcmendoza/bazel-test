@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es6",
     "module": "commonjs",
-    "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./build",
+    "declaration": true,
     "strict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -15,12 +13,18 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
     "lib": [
-      "esnext",
+      "es2020",
       "dom"
-    ],
+    ]
   },
-  "exclude": ["node_modules/**/*"]
+  "exclude":[
+    "bazel-*",
+    "node_modules"
+  ]
 }
